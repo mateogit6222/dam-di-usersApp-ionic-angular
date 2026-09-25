@@ -23,12 +23,12 @@ export class UsersPage implements OnInit {
 
   async loadUsers() {
     try {
-      this.loading = true; // Mostramos el mensaje de carga
+      this.loading = true; 
       this.users = await this.usersService.getActiveUsers();
     } catch (error) {
       console.error('Error:', error);
     } finally {
-      this.loading = false; // ESTO ES CLAVE: Oculta el mensaje y muestra la lista
+      this.loading = false; // <-- ASEGÚRATE DE QUE ESTA LÍNEA ESTÉ AQUÍ
     }
   }
 }
