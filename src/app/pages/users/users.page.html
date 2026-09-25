@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Usuarios Activos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Esto se muestra solo durante el medio segundo de carga -->
+  <div *ngIf="loading" class="ion-padding ion-text-center">
+    Cargando usuarios...
+  </div>
+
+  <!-- Esto se muestra solo cuando la carga termina (loading = false) -->
+  <ion-list *ngIf="!loading">
+    <ion-item *ngFor="let user of users">
+      <ion-label>
+        <h2>{{ user.name }}</h2>
+        <p>{{ user.email }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
